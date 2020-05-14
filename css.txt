@@ -30,10 +30,22 @@ rdLog("Creating custom title text")
 var RDTXT = document.createElement("a")
 RDTXT.innerText = "Disco.RD - Script V" + ScriptVer + " - Core V" + CoreVer
 RDTXT.id="RDTXT"
-document.addEventListener("DOMContentLoaded", function(event){
-console.log("Loaded - Again");
+
+const waitUntilElementExists = (selector, callback) => {
+const el = document.querySelector(selector);
+
+if (el){
+    return callback(el);
+}
+
+setTimeout(() => waitUntilElementExists(selector, callback), 500);
+}
+
+waitUntilElementExists('.wordmarkWindows-1v0lYD', (el) =>
 document.getElementsByClassName("wordmarkWindows-1v0lYD wordmark-2iDDfm")[0].appendChild(RDTXT)
-});
+);
+        
+
 
 
 rdLog("Custom title text successfully created")
