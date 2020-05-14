@@ -1,6 +1,6 @@
 // Internal vars //
-var ScriptVer = "1.2"
-var CoreVer = "1.7"
+var ScriptVer = "1.3"
+var CoreVer = "1.8"
 // Basic Disco-rd Functions //
 // Define Disco-rd console logging //
 function rdLog(msg){
