@@ -30,28 +30,9 @@ rdLog("Creating custom title text")
 var RDTXT = document.createElement("a")
 RDTXT.innerText = "Disco.RD - Script V" + ScriptVer + " - Core V" + CoreVer
 RDTXT.id="RDTXT"
-function watiForElm(selector) {
-    return new Promise(resolve => {
-        if (document.querySelector(selector)) {
-            return resolve(document.querySelector(selector));
-        }
-
-        const observer = new MutationObserver(mutations => {
-            if (document.querySelector(selector)) {
-                resolve(document.querySelector(selector));
-                observer.disconnect();
-            }
-        });
-
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
-    });
-}
-watiForElm('.wordmarkWindows-1v0lYD wordmark-2iDDfm').then(elm =>
+document.addEventListener("DOMContentLoaded", function(event){
 document.getElementsByClassName("wordmarkWindows-1v0lYD wordmark-2iDDfm")[0].appendChild(RDTXT)
-);
+});
 
 
 rdLog("Custom title text successfully created")
