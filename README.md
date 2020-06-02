@@ -9,20 +9,20 @@
 
 ![](https://github.com/FiskDk/discord-security-exploiting/raw/master/disco-rd.png)
 
-###Get Disco-RD
-######Disco-RD is currently still in development. Bugs are to be expected.
+### Get Disco-RD
+###### Disco-RD is currently still in development. Bugs are to be expected.
 
-####Windows Tutorial
+#### Windows Tutorial
 Start by downloading the installer from here
 
-[Disco-RD Windows Installer](javascript:alert("Comming soon!"))
+´Public beta comming soon!´
 
 Then run the program. Your antivirus program might detect it, just ignore it.
 When the GUI opens up, type in 
 `install`
 The program will now install Disco-RD.
 
-####iOS and iPadOS Tutorial
+#### iOS and iPadOS Tutorial
 
 You need Siri Shortcuts for this to work.
 
@@ -35,7 +35,7 @@ After you are done that you can proceed by installing the Disco-RD Shortcut by u
 
 [Disco-RD Shortcut](https://www.icloud.com/shortcuts/99b926ab47784d0aa9bcbf84a609f469)
 
-####Web Tutorial
+#### Web Tutorial
 
 To use Disco-RD on webbrowsers you will have to make a bookmark.
 Start by making a new bookmark, call it Disco-RD.
