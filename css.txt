@@ -52,7 +52,7 @@ loadTitle()
 function loadTitle(){
 document.getElementsByClassName("wordmarkWindows-1v0lYD wordmark-2iDDfm")[0].appendChild(RDTXT)
 var d = new Date();
-    n = d.getMonth();
+var n = d.getMonth();
 
     if (n == 5) {
 RDTXT.innerText = "Disco-RD - Script V" + ScriptVer + " - Core V" + CoreVer + " Happy Pride Month!"
