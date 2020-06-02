@@ -1,6 +1,6 @@
 // Internal vars //
 var ScriptVer = "1.6"
-var CoreVer = "1.9"¨
+var CoreVer = "1.9"
 var d = new Date();
 // Basic Disco-rd Functions //
 // Define Disco-rd console logging //
