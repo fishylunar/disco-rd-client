@@ -33,7 +33,7 @@ Then scroll down until you see "Shortcuts". Then click on that.
 Now you will have to enable "Allow Untrusted Shortcuts" - You will be asked to enter your passcode.
 After you are done that you can proceed by installing the Disco-RD Shortcut by using the link
 
-[Disco-RD Shortcut](https://www.icloud.com/shortcuts/99b926ab47784d0aa9bcbf84a609f469)
+[Disco-RD Shortcut](https://www.icloud.com/shortcuts/7036530795094649b343edbb8931ae99)
 
 #### Web Tutorial
 
