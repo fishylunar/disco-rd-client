@@ -47,11 +47,11 @@ setTimeout(() => waitUntilElementExists(selector, callback), 500);
 }
 
 waitUntilElementExists('.wordmarkWindows-1v0lYD', (el) =>
-loadTitle();
+loadTitle()
 );
 //Web Orange Bar Module
 waitUntilElementExists('.noticeDefault-362Ko2', (el) =>
-orangeBar();
+orangeBar()
 );
 function orangeBar(){
 document.getElementsByClassName("noticeDefault-362Ko2")[0].style.backgroundColor="black";
