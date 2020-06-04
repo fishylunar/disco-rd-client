@@ -9,6 +9,20 @@
 
 ![](https://github.com/FiskDk/discord-security-exploiting/raw/master/disco-rd.png)
 
+### Screenshots
+
+##### Disco-RD for web - Edge - Disco-RD Script V1.8.2
+![](https://github.com/FiskDk/disco-rd/blob/master/Assets/Web-Edge-Disco-RD-Script-1-8-2.png)
+
+##### Disco-RD for Windows - Core V1.9 - Disco-RD Script V1.8.2
+![](https://github.com/FiskDk/disco-rd/blob/master/Assets/Windows-Core-1-9-Disco-RD-Script-1-8-2.png)
+
+##### Disco-RD for iOS - iOS 13.5 (iPhone SE) - Disco-RD Script V1.8.2
+![](https://github.com/FiskDk/disco-rd/blob/master/Assets/iOS-13-5-Disco-RD-Script-1-8-2.png)
+
+##### Disco-RD for iPadOS - iPadOS 13.4.1 (iPad Air 2) - Disco-RD Script V1.8.2
+![](https://github.com/FiskDk/disco-rd/blob/master/Assets/iPadOS-13-4-1-Disco-RD-Script-1-8-2.png)
+
 ### Get Disco-RD
 ###### Disco-RD is currently still in development. Bugs are to be expected.
 
