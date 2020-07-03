@@ -231,7 +231,7 @@
     padding: 0;
     margin-top: 6px;
     margin-bottom: 24px;
-    color: #ffffff!importan;
+    color: #ffffff!important;
 }
 /*Settings fix */
 .customScroller-26gWhv>div {
@@ -363,25 +363,3 @@
 .contentRegionScroller-26nc1e {
     background: transparent!important;
 }
-/*
-title-3JMOhC contentBase-11jeVK class of the "connecting..." text
-
-problems-3mgf6w slideIn-sCvzGz - children[1].append("shit")
-
-ready-36e6Vk  - children[2].src
-
-problems-3mgf6w slideIn-sCvzGz  set round bg here
-
-document.getElementsByClassName("title-3JMOhC contentBase-11jeVK")[0].innerText="Loading Disco-RD"
-let rdError = document.createElement("a")
-rdError.innerText="Errors with DiscoRD"
-rdError.href="https://sergal.site/rd/error"
-rdError.classList=[
-    "anchor-3Z-8Bb",
-     "anchorUnderlineOnHover-2ESHQB",
-      "statusLink-gFXhrL links-3Ldd4A"]
-document.getElementsByClassName("problems-3mgf6w slideIn-sCvzGz")[0].children[1].appendChild(rdError)
-document.getElementsByClassName("problems-3mgf6w slideIn-sCvzGz")[0].classList.add("rd-rounded")
-//document.getElementsByClassName("ready-36e6Vk").children[1].src=""
-
-*/
