@@ -213,6 +213,11 @@
 .input-cIJ7To {
     border-radius: 15px!important;
 }
+.theme-dark .userSettingsAccount-2eMFVR .viewBody-2Qz-jg {
+    color: #b9bbbe;
+    margin-top: -41px;
+    margin-left: 300px;
+}
 /*Settings fix */
 .customScroller-26gWhv>div {
     margin-left: 40px!important;
@@ -315,7 +320,7 @@
     top: -40px!important;
     right: 0px!important;
 }
-customScroller-26gWhv>div {
+.customScroller-26gWhv>div {
     margin-left: 40px!important;
     margin-right: 97px!important;
     max-width: 660px!important;
