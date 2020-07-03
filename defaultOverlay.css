@@ -218,6 +218,21 @@
     margin-top: -41px;
     margin-left: 300px;
 }
+.theme-light .action-1lSjCi {
+    border-color: rgba(0,0,0,.1);
+    background: #040404!important;
+}
+.header-3ZP1MY {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+    text-transform: none;
+    padding: 0;
+    margin-top: 6px;
+    margin-bottom: 24px;
+    color: #ffffff!importan;
+}
 /*Settings fix */
 .customScroller-26gWhv>div {
     margin-left: 40px!important;
