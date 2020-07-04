@@ -72,7 +72,7 @@
 ##### Prerequisites 
   * A Windows PC
   * Discord installed
-  * [NodeJS]((https://nodejs.org/en/)
+  * [NodeJS](https://nodejs.org/en/)
   * Internet access (duh)
 
 #### Step by step tutorial
