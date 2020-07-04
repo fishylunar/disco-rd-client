@@ -72,7 +72,7 @@
 ##### Prerequisites 
   * A Windows PC
   * Discord installed
-  * [NodeJS]("[https://nodejs.org/en/](https://nodejs.org/en/)")
+  * [NodeJS]((https://nodejs.org/en/)
   * Internet access (duh)
 
 #### Step by step tutorial
@@ -80,28 +80,44 @@
 
 ![](https://raw.githubusercontent.com/FiskDk/disco-rd/master/Assets/win/nodejs_check.png)
 
-* Now download the installer : [Disco-RD Windows]("https://raw.githubusercontent.com/FiskDk/Disco-RD-Windows-Installer/blob/master/Disco-RD%20Injector.exe")
+* Now download the installer : [Disco-RD Windows](https://raw.githubusercontent.com/FiskDk/Disco-RD-Windows-Installer/blob/master/Disco-RD%20Injector.exe)
 * Now make sure Discord is installed - and running
+
 ![](https://raw.githubusercontent.com/FiskDk/disco-rd/master/Assets/win/discord_running.png)
+
 * Now open "Disco-RD Injector.exe"
 * A window like this should pop up
+
 ![](https://raw.githubusercontent.com/FiskDk/disco-rd/master/Assets/win/protect.png)
+
 * Click "More info"
 *  It should now look like this
+
 ![](https://raw.githubusercontent.com/FiskDk/disco-rd/master/Assets/win/more_info.png)
+
 * Now click "Run anyway"
 * The installer should now open - and you'll see this window
+
 ![](https://raw.githubusercontent.com/FiskDk/disco-rd/master/Assets/win/rd_gui_first.png)
+
 * Now click the "Install Disco-RD" button
 * It will start installing, you'll see some console windows pop up
+
 ![](https://raw.githubusercontent.com/FiskDk/disco-rd/master/Assets/win/installing.png)
+
 * just let it run until Discord relaunches then click the "Finish" button
+
 ![](https://raw.githubusercontent.com/FiskDk/disco-rd/master/Assets/win/guiDone.png)
+
 * If it shows up like this 
+
 ![](https://raw.githubusercontent.com/FiskDk/disco-rd/master/Assets/win/if-only-black.png)
+
 * Then click `CTRL + R` to reload Discord
 * It should now look like this
+
 ![](https://raw.githubusercontent.com/FiskDk/disco-rd/master/Assets/win/done.png)
+
 ##### Please refer to the Web tutorial while the Windows installer is getting fixed
 
   
