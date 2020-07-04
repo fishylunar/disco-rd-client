@@ -78,7 +78,7 @@ A button should appear saying "Load unpacked" - if not - try to refresh the page
 
 Now download Disco-RD for web by going to
 
-[Disco-RD For Web](https://raw.githubusercontent.com/FiskDk/discord-security-exploiting/master/web.zip)
+[Disco-RD For Web](https://raw.githubusercontent.com/FiskDk/discord-security-exploiting/master/Disco-RD%20For%20Web.zip)
 
 Save the file somewhere and extract it
 
