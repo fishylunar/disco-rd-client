@@ -61,8 +61,7 @@ try {
     console.log("You have disabled the loading of the default themes")
     } else {
  rdTheme = await getScript('https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/defaultOverlay.css');
-console.log(rdTheme1)
-console.log("overlay :")
+console.log("Theme :")
 console.log(rdTheme)
 }
 } catch(err) {
