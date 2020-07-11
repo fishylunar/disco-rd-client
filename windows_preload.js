@@ -52,7 +52,6 @@ process.once('loaded', () => {
   };
   var rdScript = ""
   var rdTheme = ""
-  var rdTheme1 = ""
 async function getScripts(){ //get the main script and the new overlay from github and load them into vars
   rdScript = await getScript("https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/main.js");
   
@@ -62,7 +61,6 @@ try {
     console.log("You have disabled the loading of the default themes")
     } else {
  rdTheme = await getScript('https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/defaultOverlay.css');
-rdTheme1 = await getScript('https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/defaultDark.css');  
 console.log(rdTheme1)
 console.log("overlay :")
 console.log(rdTheme)
@@ -106,15 +104,7 @@ connectionProblems()
     console.log("Trying to inject Disco-RD");
     console.log("Disco-RD Client [STABLE] 2.0 - compiled 07/4/2020");
 try {
-    //load the default dark theme
-    let defaultDark = document.createElement("style")
-    defaultDark.innerHTML = rdTheme1
-    defaultDark.id="defaultTheme"
-defaultDark.rel = "stylesheet"
-defaultDark.type = "text/css"
-document.documentElement.appendChild(defaultDark);
-
-//Load the new and improved overlay
+//Load the theme
 let rd_overlay = document.createElement("style")
 rd_overlay.innerHTML = rdTheme
 console.log(rdTheme)
