@@ -54,15 +54,15 @@ process.once('loaded', () => {
   var rdTheme = ""
   var rdTheme1 = ""
 async function getScripts(){ //get the main script and the new overlay from github and load them into vars
-  rdScript = await getScript("https://raw.githubusercontent.com/FiskDk/discord-security-exploiting/master/css.txt");
+  rdScript = await getScript("https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/main.js");
   
 try {
     if (fs.existsSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\noDefaultThemes.rdOpt")) {
     //file exists
     console.log("You have disabled the loading of the default themes")
     } else {
- rdTheme = await getScript('https://raw.githubusercontent.com/FiskDk/discord-security-exploiting/master/defaultOverlay.css');
-rdTheme1 = await getScript('https://raw.githubusercontent.com/FiskDk/discord-security-exploiting/master/defaultDark.css');  
+ rdTheme = await getScript('https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/defaultOverlay.css');
+rdTheme1 = await getScript('https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/defaultDark.css');  
 }
 } catch(err) {
   console.error(err)
