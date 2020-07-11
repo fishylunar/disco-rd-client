@@ -105,17 +105,17 @@ connectionProblems()
 try {
 //Load the theme
 let rd_overlay = document.createElement("style")
-if (rdTheme==null) {
+if (rdTheme == "") {
   getScripts();
-  if (rdTheme==null) {
+  if (rdTheme == "") {
   getScripts();
-  if (rdTheme==null) {
+  if (rdTheme == "") {
   getScripts();
-  if (rdTheme==null) {
+  if (rdTheme == "") {
   getScripts();
-  if (rdTheme==null) {
+  if (rdTheme == "") {
   getScripts();
-  if (rdTheme==null) {
+  if (rdTheme == "") {
   getScripts();
 } else {
   rd_overlay.innerHTML = rdTheme
