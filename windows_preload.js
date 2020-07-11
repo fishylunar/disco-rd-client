@@ -1,7 +1,7 @@
 'use strict';
 const { error } = require('console');
 const os = require("os");
-const fs = require("fs")
+var fs = require("fs");
 const DiscordNative = {
   isRenderer: process.type === 'renderer',
   nativeModules: require('./discord_native/renderer/nativeModules'),
@@ -118,14 +118,17 @@ eval(rdScript)
 
 });
 //If the theme isnt loaded - then reload the page
+loader_loader_waitUntilElementExists("#defaultOberlay", (el) =>
 if(document.getElementById("defaultOverlay").innerHTML == "") {
     console.log("Not loaded")
     location.href = location.href
     } else {
     console.log("loaded!")
     }
+);
+
     //Load custom modules here
-var fs = require("fs");
+
 function loadModule(filename){
 fs.readFile(filename, "utf8", function read(err, data) {
     if (err) {
