@@ -109,7 +109,7 @@ try {
     //load the default dark theme
     let defaultDark = document.createElement("style")
     defaultDark.innerHTML = rdTheme1
-    defaultDark.id="defaultOverlay"
+    defaultDark.id="defaultTheme"
 defaultDark.rel = "stylesheet"
 defaultDark.type = "text/css"
 document.documentElement.appendChild(defaultDark);
