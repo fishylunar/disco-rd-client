@@ -125,7 +125,7 @@ function checkTheme(){
     window.setTimeout(1000)
     if(document.getElementById("defaultOverlay").innerHTML == "") {
         console.log("Not loaded")
-        location.href = location.href
+        document.getElementById("defaultOverlay").innerHTML = rdTheme;
         } else {
         console.log("loaded!")
         }
