@@ -63,6 +63,9 @@ try {
     } else {
  rdTheme = await getScript('https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/defaultOverlay.css');
 rdTheme1 = await getScript('https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/defaultDark.css');  
+console.log(rdTheme1)
+console.log("overlay :")
+console.log(rdTheme)
 }
 } catch(err) {
   console.error(err)
