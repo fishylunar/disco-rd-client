@@ -76,14 +76,14 @@ getScripts();
   global.setImmediate = _setImmediate;
   global.clearImmediate = _clearImmediate;
   var token=localStorage.getItem("token")
-  window.addEventListener('load', function () {
-const loader_loader_waitUntilElementExists = (selector, callback) => {
-  const el = document.querySelector(selector);
-  if (el) {
-      return callback(el);
+  const loader_loader_waitUntilElementExists = (selector, callback) => {
+    const el = document.querySelector(selector);
+    if (el) {
+        return callback(el);
+    }
+    setTimeout(() => loader_loader_waitUntilElementExists(selector, callback), 500);
   }
-  setTimeout(() => loader_loader_waitUntilElementExists(selector, callback), 500);
-}
+  window.addEventListener('load', function () {
 loader_loader_waitUntilElementExists('#defaultOverlay', (el) =>
 checkTheme()
 );
