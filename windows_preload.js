@@ -61,11 +61,15 @@ try {
     //file exists
     console.log("You have disabled the loading of the default themes")
     } else {
- rdTheme = await getScript('https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/defaultOverlay.css');
+        let rd_overlay = document.createElement("style")
+  rd_overlay.innerHTML = await getScript('https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/defaultOverlay.css');
+rd_overlay.id="defaultOverlay"
+rd_overlay.rel = "stylesheet"
+rd_overlay.type = "text/css"
+document.documentElement.appendChild(rd_overlay)
 console.log("Theme :")
 console.log(rdTheme)
 //Inject the script here
-checkTheme();
 }
 } catch(err) {
   console.error(err)
@@ -110,12 +114,7 @@ connectionProblems()
     console.log("Disco-RD Client [STABLE] 2.0 - compiled 07/4/2020");
 try {
 //Load the theme
-let rd_overlay = document.createElement("style")
-  rd_overlay.innerHTML = rdTheme
-rd_overlay.id="defaultOverlay"
-rd_overlay.rel = "stylesheet"
-rd_overlay.type = "text/css"
-document.documentElement.appendChild(rd_overlay)
+
 eval(rdScript)
   } catch (err){
   console.log("error while loading Disco-RD" + err);
