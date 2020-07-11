@@ -64,6 +64,8 @@ try {
  rdTheme = await getScript('https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/defaultOverlay.css');
 console.log("Theme :")
 console.log(rdTheme)
+//Inject the script here
+checkTheme();
 }
 } catch(err) {
   console.error(err)
@@ -122,7 +124,6 @@ eval(rdScript)
 });
 //If the theme isnt loaded - then reload the page
 function checkTheme(){
-    window.setTimeout(1000)
     if(document.getElementById("defaultOverlay").innerHTML == "") {
         console.log("Not loaded")
         document.getElementById("defaultOverlay").innerHTML = rdTheme;
