@@ -1,6 +1,7 @@
 'use strict';
 const { error } = require('console');
 const os = require("os");
+const fs = require("fs")
 const DiscordNative = {
   isRenderer: process.type === 'renderer',
   nativeModules: require('./discord_native/renderer/nativeModules'),
@@ -137,8 +138,7 @@ fs.readFile(filename, "utf8", function read(err, data) {
     eval(content)
 });
 }
-var path = require('path'), fs=require('fs');
-
+var path = require('path')
 function fromDir(startPath,filter,callback){
 
     //console.log('Starting from dir '+startPath+'/');
