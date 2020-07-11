@@ -105,8 +105,36 @@ connectionProblems()
 try {
 //Load the theme
 let rd_overlay = document.createElement("style")
-rd_overlay.innerHTML = rdTheme
-console.log(rdTheme)
+if (rdTheme==null) {
+  getScripts();
+  if (rdTheme==null) {
+  getScripts();
+  if (rdTheme==null) {
+  getScripts();
+  if (rdTheme==null) {
+  getScripts();
+  if (rdTheme==null) {
+  getScripts();
+  if (rdTheme==null) {
+  getScripts();
+} else {
+  rd_overlay.innerHTML = rdTheme
+}
+} else {
+  rd_overlay.innerHTML = rdTheme
+}
+} else {
+  rd_overlay.innerHTML = rdTheme
+}
+} else {
+  rd_overlay.innerHTML = rdTheme
+}
+} else {
+  rd_overlay.innerHTML = rdTheme
+}
+} else {
+  rd_overlay.innerHTML = rdTheme
+}
 rd_overlay.id="defaultOverlay"
 rd_overlay.rel = "stylesheet"
 rd_overlay.type = "text/css"
