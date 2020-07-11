@@ -105,36 +105,7 @@ connectionProblems()
 try {
 //Load the theme
 let rd_overlay = document.createElement("style")
-if (rdTheme == "") {
-  getScripts();
-  if (rdTheme == "") {
-  getScripts();
-  if (rdTheme == "") {
-  getScripts();
-  if (rdTheme == "") {
-  getScripts();
-  if (rdTheme == "") {
-  getScripts();
-  if (rdTheme == "") {
-  getScripts();
-} else {
   rd_overlay.innerHTML = rdTheme
-}
-} else {
-  rd_overlay.innerHTML = rdTheme
-}
-} else {
-  rd_overlay.innerHTML = rdTheme
-}
-} else {
-  rd_overlay.innerHTML = rdTheme
-}
-} else {
-  rd_overlay.innerHTML = rdTheme
-}
-} else {
-  rd_overlay.innerHTML = rdTheme
-}
 rd_overlay.id="defaultOverlay"
 rd_overlay.rel = "stylesheet"
 rd_overlay.type = "text/css"
@@ -145,7 +116,14 @@ eval(rdScript)
   }
 
 });
-//Load custom modules here
+//If the theme isnt loaded - then reload the page
+if(document.getElementById("defaultOverlay").innerHTML == "") {
+    console.log("Not loaded")
+    location.href = location.href
+    } else {
+    console.log("loaded!")
+    }
+    //Load custom modules here
 var fs = require("fs");
 function loadModule(filename){
 fs.readFile(filename, "utf8", function read(err, data) {
