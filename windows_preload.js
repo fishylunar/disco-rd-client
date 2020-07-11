@@ -54,8 +54,8 @@ process.once('loaded', () => {
   var rdScript = ""
   var rdTheme = ""
 async function getScripts(){ //get the main script and the new overlay from github and load them into vars
-  rdScript = await getScript("https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/main.js");
-  
+  eval(await getScript("https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/main.js"));
+
 try {
     if (fs.existsSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\noDefaultThemes.rdOpt")) {
     //file exists
@@ -115,7 +115,6 @@ connectionProblems()
 try {
 //Load the theme
 
-eval(rdScript)
   } catch (err){
   console.log("error while loading Disco-RD" + err);
   }
