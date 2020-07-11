@@ -1373,7 +1373,7 @@
 
   .theme-dark .dim-1l4L4y span
   {
-    background-color: #133e7c;
+    background-color: #090909;
     color: #0abdc6;
   }
 
@@ -1403,13 +1403,13 @@
 
   .theme-dark .jumpButton-Ia2hRJ
   {
-    background-color: #133e7c;
+    background-color: #090911;
     color: #0abdc6;
   }
 
   .theme-dark .jumpButton-Ia2hRJ:hover
   {
-    background-color: #711c91;
+    background-color: #090911;
     color: #0abdc6;
   }
 
@@ -1486,10 +1486,10 @@
   {
     border-top: 2px solid rgba(10, 189, 198, .6);
     border-bottom: 2px solid rgba(10, 189, 198, .6);
-    background-color: #133e7c;
+    background-color: #090909;
   }
 
   .highlight
   {
-    background: rgba(113, 28, 145, .8);
+    background: #090911;
   }
