@@ -363,3 +363,202 @@
 .contentRegionScroller-26nc1e {
     background: transparent!important;
 }
+ .theme-dark .container-3ayLPN
+  {
+    background-color: #091833;
+  }
+
+  .theme-dark .elevationBorderHigh-2WYJ09
+  {
+    -webkit-box-shadow: 0 0 0 1px rgba(10, 189, 198,.6), 0 2px 10px 0 rgba(0,0,0,.2);
+    box-shadow: 0 0 0 1px rgba(10, 189, 198,.6), 0 2px 10px 0 rgba(0,0,0,.2);
+  }
+
+  .theme-dark .resultsGroup-r_nuzN .header-2N-gMV, .theme-dark .resultsGroup-r_nuzN .plusIcon-v0BTrL, .theme-dark .resultsGroup-r_nuzN .searchClearHistory-2cSSMO, .theme-dark .resultsGroup-r_nuzN .searchLearnMore-3SQUAj a
+  {
+    color: #0abdc6;
+  }
+
+  .theme-dark .searchOption-zQ-1l6 .filter-3Y_im-
+  {
+    color: #0abdc6;
+  }
+
+  .theme-dark .searchOption-zQ-1l6 .answer-1n6g43
+  {
+    color: rgba(10, 189, 198, 0.5);
+  }
+
+  .theme-dark .resultsGroup-r_nuzN .header-2N-gMV, .theme-dark .resultsGroup-r_nuzN .plusIcon-v0BTrL, .theme-dark .resultsGroup-r_nuzN .searchClearHistory-2cSSMO, .theme-dark .resultsGroup-r_nuzN .searchLearnMore-3SQUAj a
+  {
+    color: #0abdc6;
+  }
+
+  .theme-dark .resultsGroup-r_nuzN:hover .header-2N-gMV:hover, .theme-dark .resultsGroup-r_nuzN:hover .plusIcon-v0BTrL:hover, .theme-dark .resultsGroup-r_nuzN:hover .searchClearHistory-2cSSMO:hover, .theme-dark .resultsGroup-r_nuzN:hover .searchLearnMore-3SQUAj:hover a
+  {
+    color: #ea00d9;
+  }
+
+  .theme-dark .option-96V44q:after
+  {
+    background: none;
+  }
+
+  .theme-dark .option-96V44q .answer-1n6g43, .theme-dark .option-96V44q .nonText-3CRkO0, .theme-dark .option-96V44q strong
+  {
+    color: #ea00d9;
+  }
+
+  .theme-dark .option-96V44q.selected-rZcOL-
+  {
+    background-color: rgba(19, 62, 124, .6);
+  }
+
+  .theme-dark .option-96V44q.selected-rZcOL-:after
+  {
+    background: none;
+  }
+
+  .theme-dark .focused-2bY0OD
+  {
+    background-color: #000b1e;
+  }
+
+  .theme-dark .queryContainer-RKFJW-
+  {
+    color: #0abdc6;
+    border-bottom-color: rgba(19, 62, 124,.3);
+  }
+
+  .theme-dark .queryContainer-RKFJW- strong
+  {
+    color: #ea00d9;
+  }
+
+  .theme-dark .option-96V44q .filter-3Y_im-
+  {
+    color: rgba(10, 189, 198, .7);
+  }
+
+  .theme-dark .dim-1l4L4y span
+  {
+    background-color: #133e7c;
+    color: #0abdc6;
+  }
+
+  .theme-dark .keybindShortcut-1BD6Z1 span
+  {
+    color: #0abdc6;
+    -webkit-box-shadow: inset 0 -4px 0 rgba(0, 11, 30,.6);
+    box-shadow: inset 0 -4px 0 rgba(0, 11, 30,.6);
+    border: 1px solid #091833;
+    background-color: #133e7c;
+  }
+
+  .theme-dark .option-96V44q.user-O3Czj0 .displayedNick-3xxvzU
+  {
+    color: #ea00d9;
+  }
+
+  .theme-dark .option-96V44q.user-O3Czj0 .displayUsername-Qekxml
+  {
+    color: #711c91;
+  }
+
+  .theme-dark .searchResultChannelCategory-1l0lSn, .theme-dark .searchResultChannelIcon-1DnTme
+  {
+    color: #0abdc6;
+  }
+
+  .theme-dark .jumpButton-Ia2hRJ
+  {
+    background-color: #133e7c;
+    color: #0abdc6;
+  }
+
+  .theme-dark .jumpButton-Ia2hRJ:hover
+  {
+    background-color: #711c91;
+    color: #0abdc6;
+  }
+
+/* 6.2.1. Search results */
+  .theme-dark .searchAnswer-3Dz2-q, .theme-dark .searchFilter-2ESiM3
+  {
+    background-color: #000b1e;
+    color: #0abdc6;
+  }
+
+  .theme-dark .searchHeader-1l-wpR .tab-2Ixsn0, .theme-dark .searchHeader-1l-wpR .totalResults-gxvzgw
+  {
+    color: #0abdc6;
+  }
+
+  .theme-dark .searchHeader-1l-wpR
+  {
+    background-color: #000b1e;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.2);
+    box-shadow: 0 1px 0 rgba(0,0,0,.2);
+  }
+
+  .theme-dark .searchHeader-1l-wpR .tab-2Ixsn0.selected-16te-P, .theme-dark .searchHeader-1l-wpR .tab-2Ixsn0:hover
+  {
+    border-bottom: 2px solid #ea00d9;
+  }
+
+  .theme-dark .channelSeparator-1X1FuH .channelName-1QajIf
+  {
+    color: #0abdc6;
+    background-color: #000b1e;
+  }
+
+  .theme-dark .channelSeparator-1X1FuH:before
+  {
+    border-color: #0abdc6;
+  }
+
+  .theme-dark .searchResultsWrap-2DKFzt
+  {
+    background-color: #000b1e;
+  }
+
+  .theme-dark .searchResult-3pzFAB .hit-NLlWXA
+  {
+    background-color: #091833;
+    -webkit-box-shadow: 0 0 10px 6px #133e7c;
+    box-shadow: 0 0 10px 6px #133e7c;
+  }
+
+  .theme-dark .searchResult-3pzFAB .searchResultMessage-2VxO12.hit-NLlWXA
+  {
+    border: 2px solid rgba(19, 62, 124,.6);
+  }
+
+  .theme-dark .searchResult-3pzFAB:after
+  {
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#000b1e),to(#091833));
+    background-image: linear-gradient(180deg,#000b1e,#091833);
+  }
+
+  .theme-dark .searchResult-3pzFAB:before
+  {
+    background-image: -webkit-gradient(linear,left bottom,left top,from(#000b1e),to(#091833));
+    background-image: linear-gradient(0deg,#000b1e,#091833);
+  }
+
+  .theme-dark .emptyResultsWrap-3Kv0LQ, .theme-dark .errorWrap-MWdRCA
+  {
+    color: #0abdc6;
+  }
+
+  .theme-dark .searchResult-3pzFAB.expanded-v2Szsz .searchResultMessage-2VxO12.hit-NLlWXA
+  {
+    border-top: 2px solid rgba(10, 189, 198, .6);
+    border-bottom: 2px solid rgba(10, 189, 198, .6);
+    background-color: #133e7c;
+  }
+
+  .highlight
+  {
+    background: rgba(113, 28, 145, .8);
+  }
