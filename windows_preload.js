@@ -122,6 +122,7 @@ eval(rdScript)
 });
 //If the theme isnt loaded - then reload the page
 function checkTheme(){
+    window.setTimeout(1000)
     if(document.getElementById("defaultOverlay").innerHTML == "") {
         console.log("Not loaded")
         location.href = location.href
