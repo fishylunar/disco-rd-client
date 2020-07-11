@@ -118,17 +118,19 @@ eval(rdScript)
 
 });
 //If the theme isnt loaded - then reload the page
-loader_loader_waitUntilElementExists("#defaultOberlay", (el) =>
-if(document.getElementById("defaultOverlay").innerHTML == "") {
-    console.log("Not loaded")
-    location.href = location.href
-    } else {
-    console.log("loaded!")
-    }
-);
+function checkTheme(){
+    if(document.getElementById("defaultOverlay").innerHTML == "") {
+        console.log("Not loaded")
+        location.href = location.href
+        } else {
+        console.log("loaded!")
+        }
+}
 
     //Load custom modules here
-
+loader_loader_waitUntilElementExists('#defaultOverlay', (el) =>
+checkTheme()
+);
 function loadModule(filename){
 fs.readFile(filename, "utf8", function read(err, data) {
     if (err) {
