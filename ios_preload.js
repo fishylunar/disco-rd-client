@@ -1,9 +1,6 @@
-//Get Disco-RD - Stable
-
-//Check for theme css in cookies
-
-//Define storage functions
-
+if (style1==""){
+  console.log("no theme")
+}
 var imports = style1.split("@import url(")
 var bgURLs = style1.split("background-image: url(")
 const injectStyleFromUrl = async (url, callback) => {
@@ -11,15 +8,16 @@ let importData = await fetch(url)
 let cssCode = await importData.text()
 console.log(url)
 console.log(cssCode)
-bgURLs.forEach(function(node) {
+var bgURLs2 = cssCode.split("url(")
+bgURLs2.forEach(function(node) {
 if(!node=="") {
 console.log(node.split(")")[0])
 if(node.split(")")[0].replace('"','').replace('"','').endsWith(".png") || node.split(")")[0].replace('"','').replace('"','').endsWith(".jpg") || node.split(")")[0].replace('"','').replace('"','').endsWith(".svg")) {
 
-		if(node.split(")")[0].replace('"','').replace('"','').startsWith("http")) {
-	replaceWithDataURL(node.split(")")[0].replace('"','').replace('"',''), cssCode)
-	}
-	}
+    if(node.split(")")[0].replace('"','').replace('"','').startsWith("http")) {
+  replaceWithDataURL(node.split(")")[0].replace('"','').replace('"',''), cssCode)
+  }
+  }
 
 }
 })
@@ -37,7 +35,7 @@ if(node.split(")")[0].replace('"','').replace('"','').endsWith(".png") || node.s
     return reader.result.replace(/^data:.+;base64,/, '')
   }
 const replaceWithDataURL = async (url, cssCode, callback) => {
-	  var b64 = await getBase64Image(url)
+    var b64 = await getBase64Image(url)
   var dataURL="data:image/png;base64," + b64;
   cssCode = cssCode.replace(url, dataURL)
   console.log("replaced : " + url + " with : " + dataURL)
@@ -57,8 +55,8 @@ style1 = style1.replace("@import url(" + node.split(");")[0] + ");","")
 var ogStyle = document.createElement("style")
 ogStyle.innerHTML = style1
 document.documentElement.appendChild(ogStyle)
-  });
-  		
+
+      
 
 var rdScript = "";
 var rdTheme = "";
