@@ -193,10 +193,61 @@ fs.readFile(filename, "utf8", function read(err, data) {
 
     // Invoke the next step here however you like
     console.log(content);   // Put all of the code here (not the best solution)
-    var style = document.createElement("style");
-    style.innerHTML = content
-    style.id=filename
-    document.documentElement.appendChild(style)
+var imports = content.split("@import url(")
+var bgURLs = content.split("background-image: url(")
+const injectStyleFromUrl = async (url, callback) => {
+let importData = await fetch(url)
+let cssCode = await importData.text()
+console.log(url)
+console.log(cssCode)
+var bgURLs2 = cssCode.split("url(")
+bgURLs2.forEach(function(node) {
+if(!node=="") {
+console.log(node.split(")")[0])
+if(node.split(")")[0].replace('"','').replace('"','').endsWith(".png") || node.split(")")[0].replace('"','').replace('"','').endsWith(".jpg") || node.split(")")[0].replace('"','').replace('"','').endsWith(".svg")) {
+
+    if(node.split(")")[0].replace('"','').replace('"','').startsWith("http")) {
+  replaceWithDataURL(node.split(")")[0].replace('"','').replace('"',''), cssCode)
+  }
+  }
+
+}
+})
+
+}
+  const getBase64Image = async (url) => {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    const reader = new FileReader();
+    await new Promise((resolve, reject) => {
+      reader.onload = resolve;
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+    return reader.result.replace(/^data:.+;base64,/, '')
+  }
+const replaceWithDataURL = async (url, cssCode, callback) => {
+    var b64 = await getBase64Image(url)
+  var dataURL="data:image/png;base64," + b64;
+  cssCode = cssCode.replace(url, dataURL)
+  console.log("replaced : " + url + " with : " + dataURL)
+  var newStyle = document.createElement("style")
+newStyle.innerHTML = cssCode
+document.documentElement.appendChild(newStyle)
+}
+imports.forEach(function(node) {
+if(!node=="") {
+console.log(node.split(")")[0])
+injectStyleFromUrl(node.split(")")[0].replace('"','').replace('"',''))
+content = content.replace("@import url(" + node.split(");")[0] + ");","")
+}
+})
+
+//Injecting the stylesheet without the imports
+var ogStyle = document.createElement("style")
+ogStyle.innerHTML = content
+document.documentElement.appendChild(ogStyle)
+  });
 });
 }
 function fromDir(startPath,filter,callback){
