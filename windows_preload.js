@@ -219,6 +219,7 @@ document.documentElement.appendChild(ogStyle)
 }
 function cssBG(code) {
     var bgs = code.split("background-image: url(")
+    if(bgs.length>0){//Check if the lenght is 0 - which means that there is no backgrounds
     bgs.forEach(async (code) => {
         //check if it starts with an url
         if (code.startsWith("http")) {
@@ -229,6 +230,10 @@ function cssBG(code) {
             return updatedCSS = await code.replace(url, newURL)
         } // Do nothing if it's not a URL
     });
+  } else { // Just return the original code
+    console.log("Theme didnt contain any backgrounds.")
+    return code;
+  }
 }
 
 const getBase64Image = async (url) => {
