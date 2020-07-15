@@ -227,7 +227,9 @@ request.get(url, function (error, response, body) {
 const replaceWithDataURL = async (url, cssCode, callback) => {
     var b64 = await getBase64Image(url)
   var dataURL="data:image/png;base64," + b64;
+  if (!url.includes("cdn.discord")) {
   cssCode = cssCode.replace(url, dataURL)
+  }
   console.log("replaced : " + url + " with : " + dataURL)
   var newStyle = document.createElement("style")
 newStyle.innerHTML = cssCode
