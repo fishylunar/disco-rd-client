@@ -248,7 +248,6 @@ var ogStyle = document.createElement("style")
 ogStyle.innerHTML = content
 document.documentElement.appendChild(ogStyle)
   });
-});
 }
 function fromDir(startPath,filter,callback){
 
