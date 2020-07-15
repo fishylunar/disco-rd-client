@@ -218,7 +218,7 @@ document.documentElement.appendChild(ogStyle)
 
   });
 }
-async function cssBG(cssCode){
+const cssBG = async function (cssCode){
     var bgs = cssCode.split("background-image: url(")
     bgs.forEach(function(code) {
         //check if it starts with an url
