@@ -191,7 +191,10 @@ fs.readFile(filename, "utf8", function read(err, data) {
         throw err;
     }
 var bgcss = cssBG(data);
-
+do {
+  window.setTimeout(200)
+}
+while(bgcss == undefined)
     // Invoke the next step here however you like
     console.log(bgcss);   // Put all of the code here (not the best solution)
 var imports = bgcss.split("@import url(")
