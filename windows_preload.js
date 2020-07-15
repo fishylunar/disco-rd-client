@@ -185,7 +185,7 @@ function fromDir(startPath,filter,callback){
 });
 
 //Load Custom Themes
-var loadTheme = async (filename) => {
+const loadTheme = async (filename) => {
 fs.readFile(filename, "utf8", function read(err, data) {
     if (err) {
         throw err;
