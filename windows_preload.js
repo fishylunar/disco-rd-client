@@ -225,12 +225,15 @@ request.get(url, function (error, response, body) {
 });
   }
 const replaceWithDataURL = async (url, cssCode, callback) => {
-    var b64 = await getBase64Image(url)
-  var dataURL="data:image/png;base64," + b64;
-  if (!url.includes("cdn.discord")) {
-  cssCode = cssCode.replace(url, dataURL)
+  if (!url.startsWith("http")) {
+return console.log("not a http / https image.")
   }
-  console.log("replaced : " + url + " with : " + dataURL)
+    var b64 = await getBase64Image(url)
+  if (!url.includes("cdn.discord") || url.includes("discordapp.com")) {
+  cssCode = cssCode.replace(url, b64)
+    console.log("replaced : " + url + " with : " + b64)
+  }
+
   var newStyle = document.createElement("style")
 newStyle.innerHTML = cssCode
 document.documentElement.appendChild(newStyle)
