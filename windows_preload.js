@@ -220,7 +220,7 @@ document.documentElement.appendChild(ogStyle)
 }
 async function cssBG(cssCode){
     var bgs = cssCode.split("background-image: url(")
-    bgs.forEach(function(code)) {
+    bgs.forEach(function(code) {
         //check if it starts with an url
         if (code.startsWith("http")) {
             var url = code.split(")")[0]
@@ -229,7 +229,7 @@ async function cssBG(cssCode){
             console.log(newURL)
             return updatedCSS = await code.replace(url, newURL)
         } // Do nothing if it's not a URL
-    }
+    });
 }
 
 const getBase64Image = async (url) => {
