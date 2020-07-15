@@ -217,7 +217,7 @@ if(node.split(")")[0].replace('"','').replace('"','').endsWith(".png") || node.s
 
 }
   const getBase64Image = async (url) => {
-request.get('url', function (error, response, body) {
+request.get(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
         var b64img = "data:" + response.headers["content-type"] + ";base64," + Buffer.from(body).toString('base64');
         return b64img
