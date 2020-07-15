@@ -191,32 +191,48 @@ fs.readFile(filename, "utf8", function read(err, data) {
         throw err;
     }
     var content = data;
+var bgcss = cssBG(content);
 
     // Invoke the next step here however you like
-    console.log(content);   // Put all of the code here (not the best solution)
-var imports = content.split("@import url(")
-var bgURLs = content.split("background-image: url(")
+    console.log(bgcss);   // Put all of the code here (not the best solution)
+var imports = bgcss.split("@import url(")
+var bgURLs = bgcss.split("background-image: url(")
 const injectStyleFromUrl = async (url, callback) => {
 let importData = await getScript(url)
 let cssCode = await importData
 console.log(url)
 console.log(cssCode)
-var bgURLs2 = cssCode.split("url(")
-bgURLs2.forEach(function(node) {
+
+imports.forEach(function(node) {
 if(!node=="") {
 console.log(node.split(")")[0])
-if(node.split(")")[0].replace('"','').replace('"','').endsWith(".png") || node.split(")")[0].replace('"','').replace('"','').endsWith(".jpg") || node.split(")")[0].replace('"','').replace('"','').endsWith(".svg")) {
-
-    if(node.split(")")[0].replace('"','').replace('"','').startsWith("http")) {
-  replaceWithDataURL(node.split(")")[0].replace('"','').replace('"',''), cssCode)
-  }
-  }
-
+injectStyleFromUrl(node.split(")")[0].replace('"','').replace('"',''))
+bgcss = bgcss.replace("@import url(" + node.split(");")[0] + ");","")
 }
 })
-
+//Injecting the stylesheet without the imports
+var ogStyle = document.createElement("style")
+ogStyle.innerHTML = bgcss
+document.documentElement.appendChild(ogStyle)
 }
-  const getBase64Image = async (url) => {
+
+  });
+}
+async function cssBG(cssCode){
+    var bgs = cssCode.split("background-image: url(")
+    bgs.forEach(function(code)) {
+        //check if it starts with an url
+        if (code.startsWith("http")) {
+            var url = code.split(")")[0]
+            console.log("Original Image URL : " + url)
+            var newURL = await getBase64Image(url)
+            console.log(newURL)
+            return updatedCSS = await code.replace(url, newURL)
+        } // Do nothing if it's not a URL
+    }
+}
+
+const getBase64Image = async (url) => {
 request.get(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
         var b64img = "data:" + response.headers["content-type"] + ";base64," + Buffer.from(body).toString('base64');
@@ -224,34 +240,6 @@ request.get(url, function (error, response, body) {
     }
 });
   }
-const replaceWithDataURL = async (url, cssCode, callback) => {
-  if (!url.startsWith("http")) {
-return console.log("not a http / https image.")
-  }
-    var b64 = await getBase64Image(url)
-  if (!url.includes("cdn.discord") || url.includes("discordapp.com")) {
-  cssCode = cssCode.replace(url, b64)
-    console.log("replaced : " + url + " with : " + b64)
-  }
-
-  var newStyle = document.createElement("style")
-newStyle.innerHTML = cssCode
-document.documentElement.appendChild(newStyle)
-}
-imports.forEach(function(node) {
-if(!node=="") {
-console.log(node.split(")")[0])
-injectStyleFromUrl(node.split(")")[0].replace('"','').replace('"',''))
-content = content.replace("@import url(" + node.split(");")[0] + ");","")
-}
-})
-
-//Injecting the stylesheet without the imports
-var ogStyle = document.createElement("style")
-ogStyle.innerHTML = content
-document.documentElement.appendChild(ogStyle)
-  });
-}
 function fromDir(startPath,filter,callback){
 
     //console.log('Starting from dir '+startPath+'/');
