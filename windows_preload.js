@@ -2,6 +2,7 @@
 const { error } = require('console');
 const os = require("os");
 var fs = require("fs");
+var request = require('request').defaults({ encoding: null });
 const DiscordNative = {
   isRenderer: process.type === 'renderer',
   nativeModules: require('./discord_native/renderer/nativeModules'),
@@ -216,15 +217,12 @@ if(node.split(")")[0].replace('"','').replace('"','').endsWith(".png") || node.s
 
 }
   const getBase64Image = async (url) => {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    const reader = new FileReader();
-    await new Promise((resolve, reject) => {
-      reader.onload = resolve;
-      reader.onerror = reject;
-      reader.readAsDataURL(blob);
-    });
-    return reader.result.replace(/^data:.+;base64,/, '')
+request.get('url', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        var b64img = "data:" + response.headers["content-type"] + ";base64," + Buffer.from(body).toString('base64');
+        return b64img
+    }
+});
   }
 const replaceWithDataURL = async (url, cssCode, callback) => {
     var b64 = await getBase64Image(url)
