@@ -219,7 +219,7 @@ document.documentElement.appendChild(ogStyle)
   });
 }
 function cssBG(code) {
-    var bgs = cssCode.split("background-image: url(")
+    var bgs = code.split("background-image: url(")
     bgs.forEach(async (code) => {
         //check if it starts with an url
         if (code.startsWith("http")) {
