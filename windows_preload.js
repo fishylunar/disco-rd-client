@@ -227,7 +227,8 @@ function cssBG(code) {
             console.log("Original Image URL : " + url)
             var newURL = await getBase64Image(url)
             console.log(newURL)
-            return updatedCSS = await code.replace(url, newURL)
+            updatedCSS = await code.replace(url, newURL)
+            return updatedCSS
         } // Do nothing if it's not a URL
     });
   } else { // Just return the original code
