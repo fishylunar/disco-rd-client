@@ -185,13 +185,12 @@ function fromDir(startPath,filter,callback){
 });
 
 //Load Custom Themes
-function loadTheme(filename){
+var loadTheme = async (filename) => {
 fs.readFile(filename, "utf8", function read(err, data) {
     if (err) {
         throw err;
     }
-    var content = data;
-var bgcss = cssBG(content);
+var bgcss = await cssBG(data);
 
     // Invoke the next step here however you like
     console.log(bgcss);   // Put all of the code here (not the best solution)
