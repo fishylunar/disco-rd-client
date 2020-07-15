@@ -197,7 +197,7 @@ fs.readFile(filename, "utf8", function read(err, data) {
 var imports = content.split("@import url(")
 var bgURLs = content.split("background-image: url(")
 const injectStyleFromUrl = async (url, callback) => {
-let importData = await getScript("https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/main.js")
+let importData = await getScript(url)
 let cssCode = await importData
 console.log(url)
 console.log(cssCode)
