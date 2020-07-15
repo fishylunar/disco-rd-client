@@ -220,7 +220,7 @@ document.documentElement.appendChild(ogStyle)
 }
 function cssBG(code) {
     var bgs = cssCode.split("background-image: url(")
-    bgs.forEach(aync (code) => {
+    bgs.forEach(async (code) => {
         //check if it starts with an url
         if (code.startsWith("http")) {
             var url = code.split(")")[0]
