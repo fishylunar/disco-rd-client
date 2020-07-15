@@ -190,7 +190,7 @@ fs.readFile(filename, "utf8", function read(err, data) {
     if (err) {
         throw err;
     }
-var bgcss = await cssBG(data);
+var bgcss = cssBG(data);
 
     // Invoke the next step here however you like
     console.log(bgcss);   // Put all of the code here (not the best solution)
