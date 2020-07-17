@@ -194,7 +194,8 @@ fs.readFile(filename, "utf8", function read(err, data) {
     var newStyle = document.createElement("style")
     newStyle.innerHTML=data;
     document.documentElement.appendChild(newStyle)
-/*var bgcss = await cssBG(data)
+    /*
+var bgcss = await cssBG(data)
     // Invoke the next step here however you like
     console.log(bgcss);   // Put all of the code here (not the best solution)
 var imports = bgcss.split("@import url(")
@@ -219,7 +220,10 @@ document.documentElement.appendChild(ogStyle)
 }
 
   });
+  */
+})
 }
+/*
 function cssBG(code) {
     var bgs = code.split("background-image: url(")
     if(bgs.length>0){//Check if the lenght is 0 - which means that there is no backgrounds
@@ -239,6 +243,7 @@ function cssBG(code) {
     return code;
   }
 }
+
 const getBase64Image = async (url) => {
 request.get(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -272,5 +277,3 @@ function fromDir(startPath,filter,callback){
         console.log('-- found theme: ',filename);
         loadTheme(filename)
 });
-})
-}
