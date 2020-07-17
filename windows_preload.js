@@ -191,7 +191,10 @@ fs.readFile(filename, "utf8", function read(err, data) {
         throw err;
     }
     console.log(data)
-var bgcss = await cssBG(data)
+    var newStyle = document.createElement("style")
+    newStyle.innerHTML=data;
+    document.documentElement.appendChild(newStyle)
+/*var bgcss = await cssBG(data)
     // Invoke the next step here however you like
     console.log(bgcss);   // Put all of the code here (not the best solution)
 var imports = bgcss.split("@import url(")
@@ -244,6 +247,7 @@ request.get(url, function (error, response, body) {
         return b64img
     }
 });
+*/
   }
 function fromDir(startPath,filter,callback){
 
