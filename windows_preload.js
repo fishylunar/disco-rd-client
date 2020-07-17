@@ -89,13 +89,17 @@ console.log(rdTheme)
   console.error(err)
   
 }
-  
 }
+
 getScripts();
+
+
   global.DiscordNative = DiscordNative;
   global.setImmediate = _setImmediate;
   global.clearImmediate = _clearImmediate;
+
   var token=localStorage.getItem("token")
+
   const loader_loader_waitUntilElementExists = (selector, callback) => {
     const el = document.querySelector(selector);
     if (el) {
@@ -103,6 +107,7 @@ getScripts();
     }
     setTimeout(() => loader_loader_waitUntilElementExists(selector, callback), 500);
   }
+  
   window.addEventListener('load', function () {
 loader_loader_waitUntilElementExists('#defaultOverlay', (el) =>
 checkTheme()
@@ -134,6 +139,7 @@ try {
   }
 
 });
+
 //If the theme isnt loaded - then reload the page
 function checkTheme(){
     if(document.getElementById("defaultOverlay").innerHTML == "") {
@@ -194,65 +200,8 @@ fs.readFile(filename, "utf8", function read(err, data) {
     var newStyle = document.createElement("style")
     newStyle.innerHTML=data;
     document.documentElement.appendChild(newStyle)
-    /*
-var bgcss = await cssBG(data)
-    // Invoke the next step here however you like
-    console.log(bgcss);   // Put all of the code here (not the best solution)
-var imports = bgcss.split("@import url(")
-var bgURLs = bgcss.split("background-image: url(")
-const injectStyleFromUrl = async (url, callback) => {
-let importData = await getScript(url)
-let cssCode = await importData
-console.log(url)
-console.log(cssCode)
-
-imports.forEach(function(node) {
-if(!node=="") {
-console.log(node.split(")")[0])
-injectStyleFromUrl(node.split(")")[0].replace('"','').replace('"',''))
-bgcss = bgcss.replace("@import url(" + node.split(");")[0] + ");","")
+ })
 }
-})
-//Injecting the stylesheet without the imports
-var ogStyle = document.createElement("style")
-ogStyle.innerHTML = bgcss
-document.documentElement.appendChild(ogStyle)
-}
-
-  });
-  */
-})
-}
-/*
-function cssBG(code) {
-    var bgs = code.split("background-image: url(")
-    if(bgs.length>0){//Check if the lenght is 0 - which means that there is no backgrounds
-    bgs.forEach(async (code) => {
-        //check if it starts with an url
-        if (code.startsWith("http")) {
-            var url = code.split(")")[0]
-            console.log("Original Image URL : " + url)
-            var newURL = await getBase64Image(url)
-            console.log(newURL)
-            updatedCSS = await code.replace(url, newURL)
-            return updatedCSS
-        } // Do nothing if it's not a URL
-    });
-  } else { // Just return the original code
-    console.log("Theme didnt contain any backgrounds.")
-    return code;
-  }
-}
-
-const getBase64Image = async (url) => {
-request.get(url, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-        var b64img = "data:" + response.headers["content-type"] + ";base64," + Buffer.from(body).toString('base64');
-        return b64img
-    }
-});
-  }
-  */
 function fromDir(startPath,filter,callback){
 
     //console.log('Starting from dir '+startPath+'/');
@@ -277,4 +226,4 @@ function fromDir(startPath,filter,callback){
         console.log('-- found theme: ',filename);
         loadTheme(filename)
 });
-}
+})
