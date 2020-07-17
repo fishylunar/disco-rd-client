@@ -2,6 +2,7 @@
 const { error } = require('console');
 const os = require("os");
 var fs = require("fs");
+const electron = require("electron");
 var request = require('request').defaults({ encoding: null });
 const DiscordNative = {
   isRenderer: process.type === 'renderer',
@@ -25,6 +26,12 @@ const DiscordNative = {
   features: require('./discord_native/renderer/features'),
   settings: require('./discord_native/renderer/settings')
 };
+electron.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+    if (!details.responseHeaders["content-security-policy-report-only"] && !details.responseHeaders["content-security-policy"]) return callback({cancel: false});
+    delete details.responseHeaders["content-security-policy-report-only"];
+    delete details.responseHeaders["content-security-policy"];
+    callback({cancel: false, responseHeaders: details.responseHeaders});
+});
 DiscordNative.remoteApp = DiscordNative.app;
 DiscordNative.remotePowerMonitor = DiscordNative.powerMonitor;
 const _setImmediate = setImmediate;
