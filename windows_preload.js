@@ -239,7 +239,6 @@ function cssBG(code) {
     return code;
   }
 }
-
 const getBase64Image = async (url) => {
 request.get(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -247,8 +246,8 @@ request.get(url, function (error, response, body) {
         return b64img
     }
 });
-*/
   }
+  */
 function fromDir(startPath,filter,callback){
 
     //console.log('Starting from dir '+startPath+'/');
