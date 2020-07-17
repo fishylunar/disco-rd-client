@@ -277,3 +277,4 @@ function fromDir(startPath,filter,callback){
         console.log('-- found theme: ',filename);
         loadTheme(filename)
 });
+}
