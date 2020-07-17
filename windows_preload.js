@@ -273,3 +273,4 @@ function fromDir(startPath,filter,callback){
         loadTheme(filename)
 });
 })
+}
