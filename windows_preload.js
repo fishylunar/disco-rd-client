@@ -26,16 +26,38 @@ const DiscordNative = {
   features: require('./discord_native/renderer/features'),
   settings: require('./discord_native/renderer/settings')
 };
-electron.defaultSession.webRequest.onHeadersReceived((details, callback) => {
-    if (!details.responseHeaders["content-security-policy-report-only"] && !details.responseHeaders["content-security-policy"]) return callback({cancel: false});
-    delete details.responseHeaders["content-security-policy-report-only"];
-    delete details.responseHeaders["content-security-policy"];
-    callback({cancel: false, responseHeaders: details.responseHeaders});
-});
 DiscordNative.remoteApp = DiscordNative.app;
 DiscordNative.remotePowerMonitor = DiscordNative.powerMonitor;
 const _setImmediate = setImmediate;
 const _clearImmediate = clearImmediate;
+let rawdata = fs.readFileSync('C:\\rd.json');
+global.rdSettings = JSON.parse(rawdata);
+console.log(rdSettings)
+global.getuwu = async (url) => {
+	var re = console.log(await loadScript(url).then(function(defs) { return defs }))
+	return await re;
+}
+global.loadScript = (url) => {
+	 return new Promise((resolve, reject) => {
+        const http      = require('http'),
+              https     = require('https');
+        let client = http;
+        if (url.toString().indexOf("https") === 0) {
+            client = https;
+        }
+        client.get(url, (resp) => {
+            let data = '';
+            resp.on('data', (chunk) => {
+                data += chunk;
+            });
+            resp.on('end', () => {
+                resolve(data);
+            });
+        }).on("error", (err) => {
+            reject(err);
+        });
+    })
+}
 process.once('loaded', () => {
     //Things that make Disco-RD work
   const getScript = (url) => { // function to get scripts from github
@@ -78,10 +100,11 @@ if(await getScript("https://raw.githubusercontent.com/FiskDk/disco-rd-client/mas
     }
 }
 try {
-    if (fs.existsSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\noDefaultThemes.rdOpt")) {
-    //file exists
+	if(!rdSettings.useDefaultThemes){
+		//Loading of default themes has been disabled.
     console.log("You have disabled the loading of the default themes")
     } else {
+		//Loading of default themes is enabled, therefore inject the stylesheet.
         let rd_overlay = document.createElement("style")
   rd_overlay.innerHTML = await getScript('https://raw.githubusercontent.com/FiskDk/disco-rd-client/master/defaultOverlay.css');
 rd_overlay.id="defaultOverlay"
@@ -99,7 +122,10 @@ console.log(rdTheme)
 }
 
 getScripts();
-
+global.saveRDSettings = function() {
+	let data = JSON.stringify(rdSettings, null, 4);
+fs.writeFileSync('C:\\rd.json', data);
+}
 
   global.DiscordNative = DiscordNative;
   global.setImmediate = _setImmediate;
@@ -158,7 +184,16 @@ function checkTheme(){
 }
 
     //Load custom modules here
-
+let jsPath = rdSettings.jsPath
+if (jsPath === "default"){
+	jsPath = "C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\";
+}
+let cssPath = rdSettings.cssPath;
+if (cssPath === "default") {
+	cssPath = "C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\themes\\";
+}
+console.log("CSS Path : " + cssPath);
+console.log("JS Path : " + jsPath);
 function loadModule(filename){
 fs.readFile(filename, "utf8", function read(err, data) {
     if (err) {
@@ -192,7 +227,7 @@ function fromDir(startPath,filter,callback){
     };
 };
 
-    fromDir("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\",/\.js$/,function(filename){
+    fromDir("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\",/\.module.js$/,function(filename){
         console.log('-- found module: ',filename);
     loadModule(filename)
 });
