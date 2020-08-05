@@ -227,7 +227,7 @@ function fromDir(startPath,filter,callback){
     };
 };
 
-    fromDir("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\",/\.module.js$/,function(filename){
+    fromDir("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\",/\.js$/,function(filename){
         console.log('-- found module: ',filename);
     loadModule(filename)
 });
