@@ -30,7 +30,7 @@ DiscordNative.remoteApp = DiscordNative.app;
 DiscordNative.remotePowerMonitor = DiscordNative.powerMonitor;
 const _setImmediate = setImmediate;
 const _clearImmediate = clearImmediate;
-let rawdata = fs.readFileSync('C:\\rd.json');
+let rawdata = fs.readFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\rd.json");
 global.rdSettings = JSON.parse(rawdata);
 console.log(rdSettings)
 global.getuwu = async (url) => {
@@ -124,7 +124,7 @@ console.log(rdTheme)
 getScripts();
 global.saveRDSettings = function() {
 	let data = JSON.stringify(rdSettings, null, 4);
-fs.writeFileSync('C:\\rd.json', data);
+fs.writeFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\rd.json", data);
 }
 
   global.DiscordNative = DiscordNative;
