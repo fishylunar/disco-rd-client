@@ -30,6 +30,25 @@ DiscordNative.remoteApp = DiscordNative.app;
 DiscordNative.remotePowerMonitor = DiscordNative.powerMonitor;
 const _setImmediate = setImmediate;
 const _clearImmediate = clearImmediate;
+try {
+    if (fs.existsSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\rd.json")) {
+      //file exists
+    } else {
+        let _rdSettings = JSON.parse('{"version":"2.1","useDefaultThemes":true,"isDev":true,"cssPath":"default","jsPath":"default"}')
+        let data = JSON.stringify(_rdSettings, null, 4);
+        fs.writeFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\rd.json", data);
+        console.info("[Disco-RD Startup] Created rd.json file for options")
+        console.info("[Disco-RD Startup] File saved to : " + "C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\rd.json")
+    
+    }
+  } catch(err) {
+      let _rdSettings = JSON.parse('{"version":"2.1","useDefaultThemes":true,"isDev":true,"cssPath":"default","jsPath":"default"}')
+    let data = JSON.stringify(_rdSettings, null, 4);
+    fs.writeFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\rd.json", data);
+    console.info("[Disco-RD Startup] Created rd.json file for options")
+    console.info("[Disco-RD Startup] File saved to : " + "C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\rd.json")
+  }
+  console.info("[Disco-RD Startup] Loading options...")
 let rawdata = fs.readFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\rd.json");
 global.rdSettings = JSON.parse(rawdata);
 console.log(rdSettings)
