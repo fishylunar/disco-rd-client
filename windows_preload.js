@@ -157,9 +157,6 @@ fs.writeFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\d
 }
 global.installTheme = function(url) {
     //Check if the file is a valid CSS file
-    if(!url.endsWith(".css")) {
-        return console.error("Unable to install theme, not a valid CSS file");
-    }
     let themeName = url.split("/").slice(-1)[0].replace("/","");
     try {
         if (fs.existsSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\" + themeName)) {
