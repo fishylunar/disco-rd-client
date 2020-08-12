@@ -145,7 +145,50 @@ global.saveRDSettings = function() {
 	let data = JSON.stringify(rdSettings, null, 4);
 fs.writeFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\rd.json", data);
 }
-
+global.installTheme = function(url) {
+    //Check if the file is a valid CSS file
+    if(!url.endsWith(".css")) {
+        return console.error("Unable to install theme, not a valid CSS file");
+    }
+    let themeName = url.split("/").slice(-1)[0].replace("/","");
+    try {
+        if (fs.existsSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\" + themeName)) {
+          //file exists
+          fs.unlinkSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\" + themeName);
+        } else {
+                  
+        }
+      } catch(err) {
+              }
+              let installScriptUwU = async (url, themeName) => {
+                fs.writeFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\" + themeName,await getScript(url))
+              }
+              installScriptUwU(url, themeName)
+}
+global.enableTheme = function(themeName) {
+    try {
+        if (fs.existsSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\" + themeName + ".disabled")) {
+          //file exists
+          fs.renameSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\" + themeName + ".disabled", "C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\" + themeName + ".css");
+                 } else {
+                  
+        }
+      } catch(err) {
+              }
+}
+global.disableTheme = function(themeName) {
+    try {
+        if (fs.existsSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\" + themeName + ".css")) {
+          //file exists
+          fs.renameSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\" + themeName + ".css", "C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\" + themeName + ".disabled");
+        } else {
+                  
+        }
+      } catch(err) {
+              }
+}
+global.themes = [];
+global.disabledThemes = [];
   global.DiscordNative = DiscordNative;
   global.setImmediate = _setImmediate;
   global.clearImmediate = _clearImmediate;
@@ -257,7 +300,9 @@ fs.readFile(filename, "utf8", function read(err, data) {
     if (err) {
         throw err;
     }
-    console.log(data)
+    themes.push(filename.replace("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\",""))
+    console.log(filename)
+
     var newStyle = document.createElement("style")
     newStyle.innerHTML=data;
     document.documentElement.appendChild(newStyle)
@@ -286,5 +331,9 @@ function fromDir(startPath,filter,callback){
     fromDir("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\",/\.css$/,function(filename){
         console.log('-- found theme: ',filename);
         loadTheme(filename)
+});
+
+fromDir("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\",/\.disabled$/,function(filename){
+disabledThemes.push(filename.replace("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\modules\\",""))
 });
 })
