@@ -52,6 +52,16 @@ try {
 let rawdata = fs.readFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\rd.json");
 global.rdSettings = JSON.parse(rawdata);
 console.log(rdSettings)
+global.toggleTheme = function(name){
+    console.log("Toggling theme : " + name)
+    if(name.endsWith(".css")) {
+        //If enabled
+        disableTheme(name.replace(".css", ""))
+    } else {
+        //Should be disabled
+        enableTheme(name.replace(".disabled", ""))
+    }
+}
 global.getuwu = async (url) => {
 	var re = console.log(await loadScript(url).then(function(defs) { return defs }))
 	return await re;
