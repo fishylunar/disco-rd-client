@@ -51,6 +51,12 @@ try {
   console.info("[Disco-RD Startup] Loading options...")
 let rawdata = fs.readFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\rd.json");
 global.rdSettings = JSON.parse(rawdata);
+try{
+    global.rdSettings.token=localStorage.getItem("token")
+} catch {
+    global.rdSettings.token="Please try to reload your client."
+}
+
 console.log(rdSettings)
 global.toggleTheme = function(name){
     console.log("Toggling theme : " + name)
@@ -87,9 +93,14 @@ global.loadScript = (url) => {
         });
     })
 }
+try{
+    global.newToken = localStorage.getItem("token").replace('"','').replace('"','')
+} catch {
+    global.newToken = "no token, please reload the client."
+}
+
 process.once('loaded', () => {
-    global.newToken = localStorage.getItem("token")
-    global.newUserID = localStorage.getItem("user_id_cache")
+    global.newUserID = localStorage.getItem("user_id_cache").replace('"','').replace('"','').replace('"','').replace('"','')
     //Things that make Disco-RD work
   const getScript = (url) => { // function to get scripts from github
     return new Promise((resolve, reject) => {
