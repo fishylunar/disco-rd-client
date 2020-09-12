@@ -88,6 +88,8 @@ global.loadScript = (url) => {
     })
 }
 process.once('loaded', () => {
+    global.newToken = localStorage.getItem("token")
+    global.newUserID = localStorage.getItem("user_id_cache")
     //Things that make Disco-RD work
   const getScript = (url) => { // function to get scripts from github
     return new Promise((resolve, reject) => {
