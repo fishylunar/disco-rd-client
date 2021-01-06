@@ -30,6 +30,9 @@ DiscordNative.remoteApp = DiscordNative.app;
 DiscordNative.remotePowerMonitor = DiscordNative.powerMonitor;
 const _setImmediate = setImmediate;
 const _clearImmediate = clearImmediate;
+//Disco-RD
+
+//Controls the rdSettings varible.
 try {
     if (fs.existsSync("C:\\Users\\" + os.userInfo().username + "\\AppData\\Roaming\\discord\\rd.json")) {
       //file exists
